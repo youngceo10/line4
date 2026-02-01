@@ -1,6 +1,6 @@
 # Line4
 
-Real-time surveillance of the 4 critical thresholds that define catastrophic risk.
+Live Operational Status: Tracking catastrophic AI risk assessments across CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment from 3 major safety labs.
 
 This is a Next.js application built with Firebase Studio. Line4 turns abstract safety commitments into hard operational data by monitoring the edge of AI capability, 24/7.
 
@@ -52,4 +52,3 @@ npm run start
 *   `src/ai/`: Genkit flows for AI-driven features.
 *   `src/lib/`: Utility functions and placeholder data.
 *   `public/`: Static assets.
-

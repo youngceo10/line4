@@ -10,12 +10,10 @@ export default function Hero() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-normal font-headline tracking-tight text-card-foreground leading-tight">
-            The red line isn't a metaphor.
-            <br />
-            It’s a metric.
+            Global Risk Radar
           </h1>
           <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground">
-            Real-time surveillance of the 4 critical thresholds that define catastrophic risk. We turn abstract safety commitments into hard operational data.
+            Live Operational Status: Tracking catastrophic AI risk assessments across CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment from 3 major safety labs
           </p>
           <div className="mt-8 flex items-center gap-4">
             <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 px-6">

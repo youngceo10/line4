@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Line4',
-  description: 'Real-time surveillance of the 4 critical thresholds that define catastrophic risk.',
+  description: 'Live Operational Status: Tracking catastrophic AI risk assessments across CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment from 3 major safety labs',
 };
 
 export default function RootLayout({
