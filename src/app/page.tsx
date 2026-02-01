@@ -18,10 +18,10 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-normal font-headline text-card-foreground leading-tight">
-                In the race to AGI, who's watching the red lines?
+                The Watchtower for Frontier AI
               </h2>
               <p className="mt-6 text-lg md:text-xl text-muted-foreground">
-                We turn opaque safety commitments from the world's leading AI labs into a single, transparent dashboard. Line⁴ tracks the capabilities of frontier models against their own safety thresholds—in real-time.
+                As development accelerates, the gap between promise and reality can be disastrous. Line⁴ acts as a global watchtower, providing an unbiased, data-driven view of frontier model capabilities. We don't just report the news when a red line is crossed—we show you the curve, so you can see it coming.
               </p>
             </div>
           </div>
