@@ -15,13 +15,11 @@ export default function Hero() {
           <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground">
             We turn opaque safety commitments from the world's leading AI labs into a single, transparent dashboard. Line⁴ tracks the capabilities of frontier models against their own safety thresholds—in real-time.
           </p>
-          <div className="mt-8 flex items-center gap-4">
-            <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 px-6">
-              <Link href="/dashboard">
-                View Dashboard
-              </Link>
+          <div className="mt-8 flex items-start gap-4">
+            <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
+                <Link href="/dashboard">View Dashboard</Link>
             </Button>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 pt-2">
                <img src="https://res.cloudinary.com/djrdh7thl/image/upload/v1769948519/UHxUj0LmVxOq70NyvUz698P5IY_a4ljkt.jpg" alt="Apart Research Logo" className="h-8" />
                <p className="text-sm text-muted-foreground whitespace-nowrap">An Apart Research sprint project</p>
             </div>
