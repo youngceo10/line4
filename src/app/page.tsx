@@ -15,17 +15,6 @@ export default function Home() {
         <LogoCloud />
         <ProductFeature />
         <Process />
-        <section className="py-20 md:py-24 bg-background">
-          <div className="container mx-auto px-4 flex justify-center">
-            <Image
-              src="https://res.cloudinary.com/djrdh7thl/image/upload/v1769960012/Screenshot_2026-02-01_181203_geq39b.png"
-              alt="Line⁴ Risk Categories"
-              width={1200}
-              height={600}
-              className="rounded-lg shadow-2xl"
-            />
-          </div>
-        </section>
         <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
