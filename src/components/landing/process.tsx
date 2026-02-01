@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldAlert } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip } from "recharts";
+import { FadeIn } from "@/components/ui/fade-in";
 
 const processData = [
     {
@@ -71,8 +72,8 @@ function WatchVisual() {
                         borderRadius: '0.5rem',
                         border: '1px solid hsl(var(--border))'
                     }}/>
-                    <Line type="monotone" dataKey="capabilities" stroke="hsl(var(--primary))" strokeWidth={2} name="Capability" />
-                    <Line type="monotone" dataKey="threshold" stroke="hsl(var(--destructive))" strokeDasharray="5 5" name="Red Line" />
+                    <Line type="monotone" dataKey="capabilities" stroke="hsl(var(--primary))" strokeWidth={2} name="Capability" animationDuration={1500} />
+                    <Line type="monotone" dataKey="threshold" stroke="hsl(var(--destructive))" strokeDasharray="5 5" name="Red Line" animationDuration={1500} animationDelay={500} />
                 </LineChart>
             </ResponsiveContainer>
         </div>
@@ -117,10 +118,10 @@ export default function Process() {
     return (
         <section className="py-20 md:py-24 bg-background">
             <div className="container mx-auto px-4">
-                <div className="max-w-3xl mx-auto text-center">
+                <FadeIn className="max-w-3xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-normal font-headline">Our Process</h2>
                     <div className="mt-4 mx-auto w-24 h-px bg-border"></div>
-                </div>
+                </FadeIn>
 
                 <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-16">
                      <div className="relative border-b">
@@ -145,12 +146,16 @@ export default function Process() {
                     {processData.map(tab => (
                         <TabsContent key={tab.value} value={tab.value} className="mt-12 min-h-[420px]">
                             <div className="grid md:grid-cols-2 gap-12 items-start">
-                                <p className="text-muted-foreground leading-relaxed text-base md:text-lg pt-4">
-                                    {tab.description}
-                                </p>
-                                <div className="flex items-center justify-center">
-                                    {tab.visual}
-                                </div>
+                                <FadeIn>
+                                    <p className="text-muted-foreground leading-relaxed text-base md:text-lg pt-4">
+                                        {tab.description}
+                                    </p>
+                                </FadeIn>
+                                <FadeIn delay={200}>
+                                    <div className="flex items-center justify-center">
+                                        {tab.visual}
+                                    </div>
+                                </FadeIn>
                             </div>
                         </TabsContent>
                     ))}
