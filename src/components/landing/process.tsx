@@ -19,7 +19,7 @@ const processData = [
         value: "watch",
         number: "02",
         title: "We watch the curve",
-        description: "Safety isn't static. We track the velocity of capability capabilities. When a model’s uplift on biological tooling jumps from 5% to 20% in a month, you don't need a white paper six months later. You need a signal today. We monitor the delta between \"safe\" and \"critical\" in real-time, visualizing the distance to the red line.",
+        description: "Safety isn't static. We track the velocity of AI capabilities. When a model’s uplift on biological tooling jumps from 5% to 20% in a month, you don't need a white paper six months later. You need a signal today. We monitor the delta between \"safe\" and \"critical\" in real-time, visualizing the distance to the red line.",
         visual: <WatchVisual />,
     },
     {

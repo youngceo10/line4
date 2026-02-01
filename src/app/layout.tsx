@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Global Risk Radar',
-  description: 'Live Operational Status: Tracking catastrophic AI risk assessments across CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment from 3 major safety labs',
+  title: 'Line⁴ — AI Safety Red Lines',
+  description: 'Line⁴ provides transparent, real-time visibility into AI safety assessments across major labs, tracking risks across CBRN, cyber offense, autonomous replication, and deceptive alignment.',
 };
 
 export default function RootLayout({

@@ -1,16 +1,19 @@
-# Global Risk Radar
+# Line⁴
 
-Live Operational Status: Tracking catastrophic AI risk assessments across CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment from 3 major safety labs.
+Line⁴ aggregates official safety evaluations across three frameworks to provide transparent, real-time visibility into AI safety assessments across major labs. The dashboard tracks risks across four critical dimensions: CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment.
 
-This is a Next.js application built with Firebase Studio. Global Risk Radar turns abstract safety commitments into hard operational data by monitoring the edge of AI capability, 24/7.
+This is a Next.js application built with Firebase Studio.
 
 ## Overview
-
-Global Risk Radar provides a suite of tools to:
 
 *   **Normalize the Noise:** Ingest and standardize safety frameworks from major AI labs into a unified risk standard.
 *   **Watch the Curve:** Track the velocity of AI capabilities in real-time to signal when a model's abilities are approaching a critical threshold.
 *   **Alert the Network:** Contextualize threshold breaches and provide instant evidence files for regulators and internal teams.
+
+**Data Source:** Real assessments extracted from official lab System Cards
+- Anthropic: Responsible Scaling Policy (RSP) with Automation Safety Levels (ASL)
+- OpenAI: Preparedness Framework with severity assessments
+- DeepMind: Frontier Safety Framework with Critical Capability Levels (CCL)
 
 ## Tech Stack
 
