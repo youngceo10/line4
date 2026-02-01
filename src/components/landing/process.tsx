@@ -11,22 +11,22 @@ const processData = [
     {
         value: "normalize",
         number: "01",
-        title: "We normalize the noise",
-        description: "We ingest every system card, safety framework, and technical report from the major labs—OpenAI, Anthropic, DeepMind. We strip away the marketing fluff and map their jargon (ASL-3, Critical, CCL) into a single, unified risk standard. You stop guessing what \"Medium Risk\" means; we tell you exactly where it sits on the scale.",
+        title: "Normalize the Noise",
+        description: "Anthropic has 'Responsible Scaling Policies.' OpenAI has a 'Preparedness Framework.' DeepMind has 'Critical Capability Levels.' We ingest and standardize these disparate safety frameworks into a single, unified risk standard. No more jargon, just a clear signal.",
         visual: <LearnVisual />,
     },
     {
         value: "watch",
         number: "02",
-        title: "We watch the curve",
-        description: "Safety isn't static. We track the velocity of AI capabilities. When a model’s uplift on biological tooling jumps from 5% to 20% in a month, you don't need a white paper six months later. You need a signal today. We monitor the delta between \"safe\" and \"critical\" in real-time, visualizing the distance to the red line.",
+        title: "Watch the Curve",
+        description: "Track the velocity of AI capabilities in real-time across the four critical risk dimensions: CBRN, cyber offense, autonomous replication, and deceptive alignment. Line⁴ doesn't just show a snapshot; it shows the trendline, signaling when a model is accelerating towards a red line.",
         visual: <WatchVisual />,
     },
     {
         value: "alert",
         number: "03",
-        title: "We alert the network",
-        description: "When a threshold is breached, we don’t just log it. We contextualize it. We operationalize the response protocols defined in the International Code of Practice. Whether you are a regulator needing verification or an internal team needing leverage, we provide the evidence file instantly.",
+        title: "Alert the Network",
+        description: "A red line is just a line until it's crossed. When a threshold is breached, Line⁴ contextualizes the event and provides an instant evidence file, giving regulators and internal teams the concrete data they need to act.",
         visual: <DeepVisual />,
     }
 ]
