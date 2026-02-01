@@ -34,17 +34,26 @@ const processData = [
 
 function LearnVisual() {
     return (
-        <Card className="max-w-md mx-auto bg-white shadow-xl rounded-lg p-6">
-            <h4 className="font-normal font-headline text-center mb-4">Unified Risk Standard</h4>
+        <Card className="max-w-md mx-auto bg-card shadow-xl rounded-lg p-6 border">
+            <h4 className="font-normal font-headline text-center mb-4 text-card-foreground">Unified Risk Standard</h4>
             <div className="flex justify-around items-center text-center">
-                <div className="space-y-1">
-                    <p className="font-mono text-sm p-2 bg-gray-100 rounded">ASL-3</p>
-                    <p className="font-mono text-sm p-2 bg-gray-100 rounded">Critical</p>
-                    <p className="font-mono text-sm p-2 bg-gray-100 rounded">CCL-5</p>
+                <div className="space-y-2 text-left">
+                    <div className="font-mono text-xs p-2 bg-muted rounded">
+                        <p className="font-semibold text-muted-foreground">Anthropic</p>
+                        <p className="text-foreground">ASL-3</p>
+                    </div>
+                    <div className="font-mono text-xs p-2 bg-muted rounded">
+                         <p className="font-semibold text-muted-foreground">OpenAI</p>
+                         <p className="text-foreground">Severity 4</p>
+                    </div>
+                     <div className="font-mono text-xs p-2 bg-muted rounded">
+                         <p className="font-semibold text-muted-foreground">DeepMind</p>
+                         <p className="text-foreground">CCL-5</p>
+                    </div>
                 </div>
-                <ArrowRight className="h-8 w-8 text-gray-400 shrink-0 mx-4" />
-                <div>
-                     <p className="font-mono text-lg p-4 bg-red-100 text-red-700 rounded-lg">RISK-4</p>
+                <ArrowRight className="h-8 w-8 text-muted-foreground shrink-0 mx-4" />
+                <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4">
+                     <p className="font-mono text-lg text-destructive font-bold">RISK-4</p>
                 </div>
             </div>
         </Card>
@@ -60,14 +69,14 @@ function WatchVisual() {
         { name: 'May', capabilities: 75, threshold: 80 },
     ];
     return (
-        <div className="h-80 w-full p-4 bg-white rounded-lg shadow-xl">
+        <div className="h-80 w-full p-4 bg-card rounded-lg shadow-xl border">
              <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip contentStyle={{
-                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                        backgroundColor: 'hsl(var(--background) / 0.8)',
                         backdropFilter: 'blur(2px)',
                         borderRadius: '0.5rem',
                         border: '1px solid hsl(var(--border))'
@@ -82,13 +91,14 @@ function WatchVisual() {
 
 function DeepVisual() {
     return (
-        <Card className="max-w-sm mx-auto bg-white/30 backdrop-blur-sm shadow-xl rounded-lg p-6 text-center">
-            <div className="w-16 h-16 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <ShieldAlert className="h-8 w-8 text-red-600" />
+        <Card className="max-w-sm mx-auto bg-card/80 backdrop-blur-sm shadow-xl rounded-lg p-6 text-center border">
+            <div className="w-16 h-16 bg-destructive/10 rounded-full mx-auto mb-4 flex items-center justify-center border border-destructive/20">
+                <ShieldAlert className="h-8 w-8 text-destructive" />
             </div>
-            <h4 className="font-normal font-headline mb-1">Threshold Breach</h4>
-            <p className="text-sm text-muted-foreground mb-4">Evidence file generated.</p>
-            <Button variant="secondary" className="bg-white">View Report</Button>
+            <h4 className="font-normal font-headline mb-1 text-card-foreground">Red Line Crossed</h4>
+            <p className="font-semibold text-destructive mb-2">Cyber Offense Capabilities</p>
+            <p className="text-sm text-muted-foreground mb-4">Evidence file automatically generated and dispatched to regulatory watchdogs.</p>
+            <Button>View Evidence</Button>
         </Card>
     )
 }
