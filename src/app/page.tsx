@@ -16,7 +16,7 @@ export default function Home() {
         <Process />
         <section className="py-20 md:py-32 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
+            <div className="max-w-3xl">
               <h2 className="text-3xl md:text-4xl font-normal font-headline text-card-foreground leading-tight">
                 The Watchtower for Frontier AI
               </h2>
