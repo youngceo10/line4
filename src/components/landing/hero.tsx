@@ -43,7 +43,6 @@ export default function Hero() {
               width={1200}
               height={700}
               className="rounded-lg shadow-2xl mx-auto"
-              data-ai-hint={dashboardImage.imageHint}
               priority
             />
           )}

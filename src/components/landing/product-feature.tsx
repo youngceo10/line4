@@ -24,7 +24,6 @@ export default function ProductFeature() {
                 width={600}
                 height={450}
                 className="rounded-lg shadow-2xl"
-                data-ai-hint={productImage.imageHint}
               />
             )}
           </div>
