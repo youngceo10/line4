@@ -99,9 +99,6 @@ export default function Process() {
     const activeIndex = processData.findIndex(p => p.value === activeTab);
 
     const handleTabChange = (value: string) => {
-        if (intervalRef.current) {
-            clearInterval(intervalRef.current);
-        }
         setActiveTab(value);
     };
 
