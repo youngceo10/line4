@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Red Lines',
+  title: 'Global Risk Radar',
   description: 'Live Operational Status: Tracking catastrophic AI risk assessments across CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment from 3 major safety labs',
 };
 

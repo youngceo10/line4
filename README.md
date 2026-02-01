@@ -1,12 +1,12 @@
-# Red Lines
+# Global Risk Radar
 
 Live Operational Status: Tracking catastrophic AI risk assessments across CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment from 3 major safety labs.
 
-This is a Next.js application built with Firebase Studio. Red Lines turns abstract safety commitments into hard operational data by monitoring the edge of AI capability, 24/7.
+This is a Next.js application built with Firebase Studio. Global Risk Radar turns abstract safety commitments into hard operational data by monitoring the edge of AI capability, 24/7.
 
 ## Overview
 
-Red Lines provides a suite of tools to:
+Global Risk Radar provides a suite of tools to:
 
 *   **Normalize the Noise:** Ingest and standardize safety frameworks from major AI labs into a unified risk standard.
 *   **Watch the Curve:** Track the velocity of AI capabilities in real-time to signal when a model's abilities are approaching a critical threshold.

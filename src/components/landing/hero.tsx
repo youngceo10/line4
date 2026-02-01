@@ -10,7 +10,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-normal font-headline tracking-tight text-card-foreground leading-tight">
-            Red Lines
+            Global Risk Radar
           </h1>
           <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground">
             Live Operational Status: Tracking catastrophic AI risk assessments across CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment from 3 major safety labs
