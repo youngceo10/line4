@@ -10,7 +10,7 @@ export default function Header() {
       >
         <div className="font-headline font-bold text-2xl text-card-foreground flex items-baseline">
           <span>Line</span>
-          <span className="text-primary text-3xl -ml-1">4</span>
+          <span className="text-primary text-3xl -ml-2">4</span>
         </div>
       </Link>
 
