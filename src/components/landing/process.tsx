@@ -138,10 +138,11 @@ export default function Process() {
                      <div className="relative border-b">
                         <TabsList className="grid w-full grid-cols-3 bg-transparent p-0 h-auto rounded-none justify-items-stretch">
                             {processData.map(tab => (
-                                <TabsTrigger key={tab.value} value={tab.value} className="text-left p-4 data-[state=active]:shadow-none data-[state=active]:bg-transparent rounded-none focus:ring-0 focus:shadow-none">
-                                    <h3 className="text-sm sm:text-base md:text-lg font-headline font-semibold transition-colors text-muted-foreground data-[state=active]:text-foreground">
-                                        <span className="mr-2 opacity-50">{tab.number}</span>
-                                        &mdash; {tab.title}
+                                <TabsTrigger key={tab.value} value={tab.value} className="text-center sm:text-left p-2 sm:p-4 data-[state=active]:shadow-none data-[state=active]:bg-transparent rounded-none focus:ring-0 focus:shadow-none">
+                                    <h3 className="text-xs sm:text-base font-headline font-semibold transition-colors text-muted-foreground data-[state=active]:text-foreground">
+                                        <span className="hidden sm:inline-block mr-2 opacity-50">{tab.number}</span>
+                                        <span className="hidden sm:inline-block mr-2">&mdash;</span>
+                                        {tab.title}
                                     </h3>
                                 </TabsTrigger>
                             ))}
