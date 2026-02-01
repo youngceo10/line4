@@ -2,38 +2,55 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+
+const YCombinatorLogo = () => (
+  <div className="flex items-center justify-center bg-orange-500 text-white font-bold w-5 h-5 text-sm">
+    Y
+  </div>
+);
 
 export default function Hero() {
+  const dashboardImage = PlaceHolderImages.find(p => p.id === 'dashboard-screenshot');
+
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 text-center bg-background">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          <div className="max-w-md">
-            <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight text-card-foreground leading-tight">
-              We build AI to protect businesses from regulatory risk.
-            </h1>
-            <div className="mt-8">
-              <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
-                <Link href="#">Learn about Fed10</Link>
-              </Button>
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight text-card-foreground leading-tight">
+            Stop deciphering legislation.
+            <br />
+            Start shaping it.
+          </h1>
+          <p className="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-muted-foreground">
+            AI agents that monitor, research, and brief you on every threat before you even ask.
+          </p>
+          <div className="mt-8 flex justify-center items-center gap-4">
+            <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6">
+              <Link href="#">
+                Get Started <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              Backed by <YCombinatorLogo /> Combinator
             </div>
           </div>
-          <div className="space-y-6 text-muted-foreground md:text-lg pt-2">
-            <p>
-              Fed10 is built by ex-lobbyists and engineers from Harvard, Amazon,
-              Berkeley, Williams, and United Way. We know how policy moves
-              because we&apos;ve moved it ourselves.
-            </p>
-            <p>
-              We&apos;re deadset on building software that saves you time, so you can
-              spend time shaking hands instead of behind a screen.
-            </p>
-            <p>
-              Our software is capable of much more than tracking. Our software is
-              purposely built for you. We&apos;ll gather the necessary information and build
-              out features to your request, automating policy consultants in seconds.
-            </p>
-          </div>
+        </div>
+
+        <div className="mt-16 md:mt-24">
+          {dashboardImage && (
+            <Image
+              src={dashboardImage.imageUrl}
+              alt={dashboardImage.description}
+              width={1200}
+              height={700}
+              className="rounded-lg shadow-2xl mx-auto"
+              data-ai-hint={dashboardImage.imageHint}
+              priority
+            />
+          )}
         </div>
       </div>
     </section>

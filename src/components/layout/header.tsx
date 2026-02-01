@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
 const Fed10Logo = () => (
-    <div className='transform -rotate-[15deg]'>
+    <div>
         <svg
             xmlns="http://www.w3.org/2000/svg"
             width="28"
