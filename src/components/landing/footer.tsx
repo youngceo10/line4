@@ -11,7 +11,7 @@ export default function Footer() {
              <sup className="font-bold text-primary text-5xl md:text-7xl -top-3 md:-top-5 relative ml-1">4</sup>
           </div>
           <Button asChild size="lg" className="bg-background text-foreground hover:bg-background/90 rounded-full px-8">
-            <Link href="/dashboard">View Dashboard</Link>
+            <Link href="https://ai-red-line-tracker.streamlit.app/" target="_blank" rel="noopener noreferrer">View Dashboard</Link>
           </Button>
         </div>
       </div>

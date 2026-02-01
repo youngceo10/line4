@@ -17,7 +17,7 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex items-start gap-4">
             <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
-                <Link href="/dashboard">View Dashboard</Link>
+                <Link href="https://ai-red-line-tracker.streamlit.app/" target="_blank" rel="noopener noreferrer">View Dashboard</Link>
             </Button>
             <div className="flex items-center gap-3 pt-2">
                <img src="https://res.cloudinary.com/djrdh7thl/image/upload/v1769948519/UHxUj0LmVxOq70NyvUz698P5IY_a4ljkt.jpg" alt="Apart Research Logo" className="h-8" />
