@@ -53,4 +53,3 @@ npm run start
 *   `src/lib/`: Utility functions and placeholder data.
 *   `public/`: Static assets.
 
-This project was bootstrapped with [Firebase Studio](https://firebase.google.com/docs/studio).

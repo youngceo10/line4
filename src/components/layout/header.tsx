@@ -10,13 +10,13 @@ export default function Header() {
       >
         <div className="font-headline font-bold text-2xl text-card-foreground flex items-center">
           <span>Line</span>
-          <sup className="text-primary text-2xl font-bold -top-2 relative ml-0.5">4</sup>
+          <sup className="font-bold text-primary text-2xl -top-2 relative ml-0.5">4</sup>
         </div>
       </Link>
 
       <div className="flex items-center gap-4">
         <Button asChild className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6">
-          <Link href="#">Get Access</Link>
+          <Link href="/dashboard">Get Access</Link>
         </Button>
       </div>
     </header>
