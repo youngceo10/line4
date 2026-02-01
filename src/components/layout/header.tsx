@@ -16,7 +16,7 @@ export default function Header() {
 
       <div className="flex items-center gap-4">
         <Button asChild className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6">
-          <Link href="/">Get Access</Link>
+          <Link href="/dashboard">View Dashboard</Link>
         </Button>
       </div>
     </header>

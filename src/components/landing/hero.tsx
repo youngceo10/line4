@@ -17,8 +17,8 @@ export default function Hero() {
           </p>
           <div className="mt-8 flex items-center gap-4">
             <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 px-6">
-              <Link href="/">
-                Get Access
+              <Link href="/dashboard">
+                View Dashboard
               </Link>
             </Button>
             <div className="flex items-center gap-3">
