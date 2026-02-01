@@ -27,7 +27,10 @@ export default function Hero() {
               </Link>
             </Button>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              Backed by Your Org/Grant
+              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0L61.2257 34.5491L97.5528 24.4717L75.5283 50L97.5528 75.5283L61.2257 65.4509L50 100L38.7743 65.4509L2.44717 75.5283L24.4717 50L2.44717 24.4717L38.7743 34.5491L50 0Z" fill="#63FF9C"/>
+              </svg>
+              An Apart Research sprint project
             </div>
           </div>
         </div>
