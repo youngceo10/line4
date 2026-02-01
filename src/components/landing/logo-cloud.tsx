@@ -2,7 +2,7 @@ export default function LogoCloud() {
   return (
     <div className="bg-background py-12">
       <div className="container mx-auto px-4">
-        <h2 className="text-left text-lg font-semibold leading-8 text-muted-foreground">
+        <h2 className="text-left text-lg font-normal leading-8 text-muted-foreground">
           Tracking the leading AI labs
         </h2>
         <div className="mt-10 grid max-w-4xl grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-4">

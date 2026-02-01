@@ -34,7 +34,7 @@ const processData = [
 function LearnVisual() {
     return (
         <Card className="max-w-md mx-auto bg-white shadow-xl rounded-lg p-6">
-            <h4 className="font-semibold font-headline text-center mb-4">Unified Risk Standard</h4>
+            <h4 className="font-normal font-headline text-center mb-4">Unified Risk Standard</h4>
             <div className="flex justify-around items-center text-center">
                 <div className="space-y-1">
                     <p className="font-mono text-sm p-2 bg-gray-100 rounded">ASL-3</p>
@@ -85,7 +85,7 @@ function DeepVisual() {
             <div className="w-16 h-16 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                 <ShieldAlert className="h-8 w-8 text-red-600" />
             </div>
-            <h4 className="font-semibold font-headline mb-1">Threshold Breach</h4>
+            <h4 className="font-normal font-headline mb-1">Threshold Breach</h4>
             <p className="text-sm text-muted-foreground mb-4">Evidence file generated.</p>
             <Button variant="secondary" className="bg-white">View Report</Button>
         </Card>
@@ -97,10 +97,6 @@ export default function Process() {
     const [activeTab, setActiveTab] = useState(processData[0].value);
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
     const activeIndex = processData.findIndex(p => p.value === activeTab);
-
-    const handleTabChange = (value: string) => {
-        setActiveTab(value);
-    };
 
     useEffect(() => {
         intervalRef.current = setInterval(() => {
@@ -122,11 +118,11 @@ export default function Process() {
         <section className="py-20 md:py-24 bg-card">
             <div className="container mx-auto px-4">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-semibold font-headline">Our Process</h2>
+                    <h2 className="text-3xl md:text-4xl font-normal font-headline">Our Process</h2>
                     <div className="mt-4 mx-auto w-24 h-px bg-border"></div>
                 </div>
 
-                <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-16">
+                <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-16">
                      <div className="relative border-b">
                         <TabsList className="grid w-full grid-cols-3 bg-transparent p-0 h-auto rounded-none justify-items-stretch">
                             {processData.map(tab => (

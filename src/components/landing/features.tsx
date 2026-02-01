@@ -28,7 +28,7 @@ export default function Features() {
     <section className="py-20 md:py-32">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold font-headline text-card-foreground">
+          <h2 className="text-3xl md:text-4xl font-normal font-headline text-card-foreground">
             Powerful Features for Proactive Policy Management
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
@@ -39,7 +39,7 @@ export default function Features() {
           {features.map((feature, index) => (
             <div key={index} className="bg-card p-8 rounded-lg shadow-sm text-center">
               <div className="flex justify-center mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold font-headline mb-2">{feature.title}</h3>
+              <h3 className="text-xl font-normal font-headline mb-2">{feature.title}</h3>
               <p className="text-muted-foreground">{feature.description}</p>
             </div>
           ))}
