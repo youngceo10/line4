@@ -1,8 +1,6 @@
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function ProductFeature() {
-  const productImage = PlaceHolderImages.find(p => p.id === 'product-feature-screenshot');
 
   return (
     <section className="py-20 md:py-24 border-t">
@@ -17,15 +15,13 @@ export default function ProductFeature() {
             </p>
           </div>
           <div className="flex justify-center">
-            {productImage && (
               <Image
-                src={productImage.imageUrl}
-                alt={productImage.description}
+                src="https://images.unsplash.com/photo-1618063280149-c9e9a1178a7c?w=1200&h=900&fit=crop"
+                alt="A screenshot of the Line4 product showing risk analysis."
                 width={600}
                 height={450}
                 className="rounded-lg shadow-2xl"
               />
-            )}
           </div>
         </div>
       </div>
