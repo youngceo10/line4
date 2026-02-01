@@ -9,11 +9,11 @@ export default function ProductFeature() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn>
-            <div className="max-w-lg">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal font-headline tracking-tight text-card-foreground leading-tight">
+            <div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal font-headline tracking-tight text-card-foreground leading-tight">
                 We translate safety jargon into a clear risk signal.
               </h2>
-              <p className="mt-6 text-lg text-muted-foreground">
+              <p className="mt-6 text-lg md:text-xl text-muted-foreground">
                 OpenAI's 'Preparedness Framework,' Anthropic's 'ASLs,' DeepMind's 'CCLs'—they're all different languages for the same critical question: how close are we to the edge? Line⁴ ingests, normalizes, and standardizes these frameworks into one unified view. You don't see their marketing; you see their math.
               </p>
             </div>

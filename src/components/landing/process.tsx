@@ -174,7 +174,7 @@ export default function Process() {
     }, [progress]);
     
     return (
-        <section ref={sectionRef} className="py-20 md:py-24 bg-background">
+        <section ref={sectionRef} className="py-20 md:py-24 lg:py-28 bg-background">
             <div className="container mx-auto px-4">
                 <FadeIn className="max-w-3xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-normal font-headline">Our Process</h2>
@@ -202,8 +202,8 @@ export default function Process() {
                     </div>
                     
                     {processData.map(tab => (
-                        <TabsContent key={tab.value} value={tab.value} className="mt-12 min-h-0 md:min-h-[420px]">
-                            <div className="grid md:grid-cols-2 gap-12 items-center">
+                        <TabsContent key={tab.value} value={tab.value} className="mt-12 min-h-0 md:min-h-[420px] lg:min-h-[480px]">
+                            <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
                                 <FadeIn>
                                     <p className="text-muted-foreground leading-relaxed text-base md:text-lg pt-4">
                                         {tab.description}

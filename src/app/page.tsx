@@ -19,7 +19,7 @@ export default function Home() {
         <FadeIn>
           <section className="pt-0 pb-20 md:pt-0 md:pb-32 bg-background">
             <div className="container mx-auto px-4">
-              <div className="max-w-3xl">
+              <div className="max-w-4xl">
                 <h2 className="text-3xl md:text-4xl font-normal font-headline text-card-foreground leading-tight">
                   The Watchtower for Frontier AI
                 </h2>

@@ -11,14 +11,14 @@ export default function Hero() {
   return (
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <FadeIn>
-            <h1 className="text-4xl md:text-6xl font-normal font-headline tracking-tight text-card-foreground leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal font-headline tracking-tight text-card-foreground leading-tight">
               In the race to AGI, who's watching the red lines?
             </h1>
           </FadeIn>
           <FadeIn delay={200}>
-            <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground">
+            <p className="mt-6 max-w-3xl text-lg md:text-xl text-muted-foreground">
               We turn opaque safety commitments from the world's leading AI labs into a single, transparent dashboard. Line⁴ tracks the capabilities of frontier models against their own safety thresholds—in real-time.
             </p>
           </FadeIn>
