@@ -23,7 +23,10 @@ export default function Hero() {
                 Get Access
               </Link>
             </Button>
-            <img src="https://res.cloudinary.com/djrdh7thl/image/upload/v1769948519/UHxUj0LmVxOq70NyvUz698P5IY_a4ljkt.jpg" alt="Apart Research Logo" className="h-8" />
+            <div className="flex items-center gap-3">
+               <img src="https://res.cloudinary.com/djrdh7thl/image/upload/v1769948519/UHxUj0LmVxOq70NyvUz698P5IY_a4ljkt.jpg" alt="Apart Research Logo" className="h-8" />
+               <p className="text-sm text-muted-foreground whitespace-nowrap">An Apart Research sprint project</p>
+            </div>
           </div>
         </div>
 
