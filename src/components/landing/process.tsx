@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ShieldAlert } from "lucide-react";
+import { ArrowRight, ShieldAlert, ArrowDown } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip } from "recharts";
 import { FadeIn } from "@/components/ui/fade-in";
 
@@ -36,7 +36,7 @@ function LearnVisual() {
     return (
         <Card className="max-w-md mx-auto bg-card shadow-xl rounded-lg p-6 border">
             <h4 className="font-normal font-headline text-center mb-4 text-card-foreground">Unified Risk Standard</h4>
-            <div className="flex justify-around items-center text-center">
+            <div className="flex flex-col sm:flex-row justify-around items-center text-center gap-4">
                 <div className="space-y-2 text-left">
                     <div className="font-mono text-xs p-2 bg-muted rounded">
                         <p className="font-semibold text-muted-foreground">Anthropic</p>
@@ -51,7 +51,8 @@ function LearnVisual() {
                          <p className="text-foreground">CCL-5</p>
                     </div>
                 </div>
-                <ArrowRight className="h-8 w-8 text-muted-foreground shrink-0 mx-4" />
+                <ArrowDown className="h-8 w-8 text-muted-foreground shrink-0 sm:hidden" />
+                <ArrowRight className="h-8 w-8 text-muted-foreground shrink-0 hidden sm:block" />
                 <div className="bg-destructive/10 border border-destructive/20 rounded-lg p-4">
                      <p className="font-mono text-lg text-destructive font-bold">RISK-4</p>
                 </div>
@@ -69,7 +70,7 @@ function WatchVisual() {
         { name: 'May', capabilities: 75, threshold: 80 },
     ];
     return (
-        <div className="h-80 w-full p-4 bg-card rounded-lg shadow-xl border">
+        <div className="h-72 sm:h-80 w-full p-4 bg-card rounded-lg shadow-xl border">
              <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={data} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
                     <CartesianGrid strokeDasharray="3 3" />
@@ -133,12 +134,12 @@ export default function Process() {
                     <div className="mt-4 mx-auto w-24 h-px bg-border"></div>
                 </FadeIn>
 
-                <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-16">
+                <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-12 sm:mt-16">
                      <div className="relative border-b">
                         <TabsList className="grid w-full grid-cols-3 bg-transparent p-0 h-auto rounded-none justify-items-stretch">
                             {processData.map(tab => (
                                 <TabsTrigger key={tab.value} value={tab.value} className="text-left p-4 data-[state=active]:shadow-none data-[state=active]:bg-transparent rounded-none focus:ring-0 focus:shadow-none">
-                                    <h3 className="text-base md:text-lg font-headline font-semibold transition-colors text-muted-foreground data-[state=active]:text-foreground">
+                                    <h3 className="text-sm sm:text-base md:text-lg font-headline font-semibold transition-colors text-muted-foreground data-[state=active]:text-foreground">
                                         <span className="mr-2 opacity-50">{tab.number}</span>
                                         &mdash; {tab.title}
                                     </h3>
@@ -154,8 +155,8 @@ export default function Process() {
                     </div>
                     
                     {processData.map(tab => (
-                        <TabsContent key={tab.value} value={tab.value} className="mt-12 min-h-[420px]">
-                            <div className="grid md:grid-cols-2 gap-12 items-start">
+                        <TabsContent key={tab.value} value={tab.value} className="mt-12 min-h-0 md:min-h-[420px]">
+                            <div className="grid md:grid-cols-2 gap-12 items-center">
                                 <FadeIn>
                                     <p className="text-muted-foreground leading-relaxed text-base md:text-lg pt-4">
                                         {tab.description}

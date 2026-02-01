@@ -1,15 +1,16 @@
 import Image from "next/image";
 import { FadeIn } from "@/components/ui/fade-in";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function ProductFeature() {
-
+  const featureImage = PlaceHolderImages.find(p => p.id === 'product-feature-screenshot');
   return (
     <section className="py-20 md:py-24 border-t">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <FadeIn>
             <div className="max-w-lg">
-              <h2 className="text-4xl md:text-5xl font-normal font-headline tracking-tight text-card-foreground leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal font-headline tracking-tight text-card-foreground leading-tight">
                 We translate safety jargon into a clear risk signal.
               </h2>
               <p className="mt-6 text-lg text-muted-foreground">
@@ -19,8 +20,8 @@ export default function ProductFeature() {
           </FadeIn>
           <FadeIn delay={200} className="flex justify-center">
               <Image
-                src="https://res.cloudinary.com/djrdh7thl/image/upload/v1769959880/Screenshot_2026-02-01_183103_um8fs5.png"
-                alt="A screenshot of the Line⁴ product showing risk analysis."
+                src={featureImage?.imageUrl || "https://res.cloudinary.com/djrdh7thl/image/upload/v1769959880/Screenshot_2026-02-01_183103_um8fs5.png"}
+                alt={featureImage?.description || "A screenshot of the Line⁴ product showing risk analysis."}
                 width={600}
                 height={450}
                 className="rounded-lg shadow-2xl"
