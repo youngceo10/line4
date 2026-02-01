@@ -7,7 +7,7 @@ export default function ProductFeature() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="max-w-lg">
-            <h2 className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-card-foreground leading-tight">
+            <h2 className="text-4xl md:text-5xl font-semibold font-headline tracking-tight text-card-foreground leading-tight">
               Reads every eval. Understands what it actually implies.
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">

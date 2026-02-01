@@ -9,7 +9,7 @@ export default function Hero() {
     <section className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight text-card-foreground leading-tight">
+          <h1 className="text-4xl md:text-6xl font-semibold font-headline tracking-tight text-card-foreground leading-tight">
             The red line isn't a metaphor.
             <br />
             It’s a metric.
