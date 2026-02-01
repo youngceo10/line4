@@ -23,12 +23,7 @@ export default function Hero() {
                 Get Access
               </Link>
             </Button>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <svg width="20" height="20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 0L61.2257 34.5491L97.5528 24.4717L75.5283 50L97.5528 75.5283L61.2257 65.4509L50 100L38.7743 65.4509L2.44717 75.5283L24.4717 50L2.44717 24.4717L38.7743 34.5491L50 0Z" fill="#63FF9C"/>
-              </svg>
-              An Apart Research sprint project
-            </div>
+            <img src="https://res.cloudinary.com/djrdh7thl/image/upload/v1769948519/UHxUj0LmVxOq70NyvUz698P5IY_a4ljkt.jpg" alt="Apart Research Logo" className="h-8" />
           </div>
         </div>
 
