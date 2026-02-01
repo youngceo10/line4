@@ -2,51 +2,38 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 
 export default function Hero() {
-  const dashboardImage = PlaceHolderImages.find(p => p.id === 'dashboard-screenshot');
-
   return (
-    <section className="pt-20 md:pt-28 pb-10">
+    <section className="py-20 md:py-28">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="max-w-3xl text-left">
-          <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight text-card-foreground">
-            Stop deciphering legislation.
-            <br />
-            Start shaping it.
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg md:text-xl text-muted-foreground">
-            AI agents that monitor, research, and brief you on every threat before you even ask.
-          </p>
-          <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:gap-6 gap-4">
-            <Button asChild size="lg" className="w-fit bg-foreground text-background hover:bg-foreground/90 rounded-md px-6">
-              <Link href="#">Get Started <ArrowRight className="ml-2 h-5 w-5" /></Link>
-            </Button>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>Backed by</span>
-              <div className="flex items-center gap-1.5 font-semibold text-card-foreground">
-                <div className="w-5 h-5 bg-[#FF6600] flex items-center justify-center text-white font-bold text-sm rounded-sm">Y</div>
-                <span>Combinator</span>
-              </div>
+        <div className="grid md:grid-cols-2 gap-16 items-start">
+          <div className="max-w-md">
+            <h1 className="text-4xl md:text-6xl font-bold font-headline tracking-tight text-card-foreground leading-tight">
+              We build AI to protect businesses from regulatory risk.
+            </h1>
+            <div className="mt-8">
+              <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
+                <Link href="#">Learn about Fed10</Link>
+              </Button>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="container mx-auto px-4 md:px-8 mt-16">
-        <div className="relative">
-          {dashboardImage && (
-             <Image
-                src={dashboardImage.imageUrl}
-                alt={dashboardImage.description}
-                width={1200}
-                height={750}
-                className="rounded-lg shadow-2xl w-full"
-                data-ai-hint={dashboardImage.imageHint}
-              />
-          )}
+          <div className="space-y-6 text-muted-foreground md:text-lg pt-2">
+            <p>
+              Fed10 is built by ex-lobbyists and engineers from Harvard, Amazon,
+              Berkeley, Williams, and United Way. We know how policy moves
+              because we&apos;ve moved it ourselves.
+            </p>
+            <p>
+              We&apos;re deadset on building software that saves you time, so you can
+              spend time shaking hands instead of behind a screen.
+            </p>
+            <p>
+              Our software is capable of much more than tracking. Our software is
+              purposely built for you. We&apos;ll gather the necessary information and build
+              out features to your request, automating policy consultants in seconds.
+            </p>
+          </div>
         </div>
       </div>
     </section>
