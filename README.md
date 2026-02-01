@@ -1,32 +1,23 @@
 # Line⁴
 
-Line⁴ aggregates official safety evaluations across three frameworks to provide transparent, real-time visibility into AI safety assessments across major labs. The dashboard tracks risks across four critical dimensions: CBRN proliferation, cyber offense capabilities, autonomous replication, and deceptive alignment.
+Line⁴ provides transparent, real-time visibility into AI safety assessments across major labs. It tracks the capabilities of frontier models against their own safety thresholds—in real-time.
 
-This is a Next.js application built with Firebase Studio.
+This repository contains the source code for the Line⁴ landing page.
 
-## Overview
-
-*   **Normalize the Noise:** Ingest and standardize safety frameworks from major AI labs into a unified risk standard.
-*   **Watch the Curve:** Track the velocity of AI capabilities in real-time to signal when a model's abilities are approaching a critical threshold.
-*   **Alert the Network:** Contextualize threshold breaches and provide instant evidence files for regulators and internal teams.
-
-**Data Source:** Real assessments extracted from official lab System Cards
-- Anthropic: Responsible Scaling Policy (RSP) with Automation Safety Levels (ASL)
-- OpenAI: Preparedness Framework with severity assessments
-- DeepMind: Frontier Safety Framework with Critical Capability Levels (CCL)
+**Live Dashboard:** [ai-red-line-tracker.streamlit.app](https://ai-red-line-tracker.streamlit.app/)
 
 ## Tech Stack
 
 *   **Framework:** [Next.js](https://nextjs.org/)
 *   **UI:** [React](https://react.dev/) with [ShadCN UI](https://ui.shadcn.com/) and [Tailwind CSS](https://tailwindcss.com/)
-*   **Generative AI:** [Google's Genkit](https://firebase.google.com/docs/genkit)
-*   **Deployment:** Firebase App Hosting
+*   **Deployment:** [Vercel](https://vercel.com/)
 
 ## Getting Started
 
 To get the development server running:
 
 ```bash
+npm install
 npm run dev
 ```
 
@@ -40,18 +31,8 @@ To create a production build:
 npm run build
 ```
 
-### Running in Production
+This will generate an optimized production build in the `.next` folder.
 
-To start the production server:
+## Deployment
 
-```bash
-npm run start
-```
-
-## Project Structure
-
-*   `src/app/`: The core Next.js application pages and layouts.
-*   `src/components/`: Reusable React components.
-*   `src/ai/`: Genkit flows for AI-driven features.
-*   `src/lib/`: Utility functions and placeholder data.
-*   `public/`: Static assets.
+This application is ready to be deployed on [Vercel](https://vercel.com/). Simply connect your GitHub repository to a new Vercel project.
