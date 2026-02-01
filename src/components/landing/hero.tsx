@@ -28,7 +28,7 @@ export default function Hero() {
 
         <div className="mt-16 md:mt-24">
             <Image
-              src="https://images.unsplash.com/photo-1622816188655-9e99d5197616?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkYXNoYm9hcmQlMjB1aXxlbnwwfHx8fDE3Njk5MDUxOTZ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+              src="https://res.cloudinary.com/djrdh7thl/image/upload/v1769959770/Safari_Browser_hg2lyd.png"
               alt="A screenshot of the Line⁴ application dashboard."
               width={1200}
               height={700}
