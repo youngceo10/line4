@@ -8,7 +8,10 @@ export default function Header() {
         href="/"
         className="flex items-center gap-2 text-lg font-semibold"
       >
-        <span className="font-headline font-bold text-2xl text-card-foreground">Line4</span>
+        <div className="font-headline font-bold text-2xl text-card-foreground flex items-baseline">
+          <span>Line</span>
+          <span className="text-primary text-3xl -ml-1">4</span>
+        </div>
       </Link>
 
       <div className="flex items-center gap-4">
