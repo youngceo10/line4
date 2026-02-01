@@ -4,68 +4,46 @@ import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileText, ThumbsDown, ThumbsUp } from "lucide-react";
+import { ArrowRight, ShieldAlert } from "lucide-react";
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip } from "recharts";
 
 const processData = [
     {
-        value: "learn",
+        value: "normalize",
         number: "01",
-        title: "We learn you",
-        description: "We pull everything public—financials, SEC filings, press releases, earnings calls, regulatory history—and map your policy exposure automatically. Then you upload what's proprietary: policy positions, compliance requirements, focus states, blind spots. Within minutes, we know what legislation could help you, hurt you, or blindside you. This becomes your always-on filter—every alert, every brief, built around your business. No noise. Just what matters.",
+        title: "We normalize the noise",
+        description: "We ingest every system card, safety framework, and technical report from the major labs—OpenAI, Anthropic, DeepMind. We strip away the marketing fluff and map their jargon (ASL-3, Critical, CCL) into a single, unified risk standard. You stop guessing what \"Medium Risk\" means; we tell you exactly where it sits on the scale.",
         visual: <LearnVisual />,
     },
     {
         value: "watch",
         number: "02",
-        title: "We watch everything",
-        description: "130,000 active bills. 7,383 state legislators. 535 members of Congress. Every amendment filed at midnight. Every hearing quietly scheduled for next week. Every fiscal analysis quietly published on a Friday afternoon. We deploy AI agents trained like policy consultants to watch all of it, 24/7, 365. You never have to outsource your thinking to a consultant who bills you to learn your industry. We already know, and we're already watching.",
+        title: "We watch the curve",
+        description: "Safety isn't static. We track the velocity of capability capabilities. When a model’s uplift on biological tooling jumps from 5% to 20% in a month, you don't need a white paper six months later. You need a signal today. We monitor the delta between \"safe\" and \"critical\" in real-time, visualizing the distance to the red line.",
         visual: <WatchVisual />,
     },
     {
-        value: "deep",
+        value: "alert",
         number: "03",
-        title: "We go deep",
-        description: "When we find a threat, we don't just alert you. We research it like a senior consultant would—except in seconds. Pull the sponsor's voting history. Check PAC contributions. Map the committee, count the votes, identify swing members. Find the chief of staff for every office that matters. Compare the language to 40 years of precedent. Flag compliance costs. Draft your position paper. All of it—automatically, before you ask.",
+        title: "We alert the network",
+        description: "When a threshold is breached, we don’t just log it. We contextualize it. We operationalize the response protocols defined in the International Code of Practice. Whether you are a regulator needing verification or an internal team needing leverage, we provide the evidence file instantly.",
         visual: <DeepVisual />,
     }
 ]
 
 function LearnVisual() {
     return (
-        <Card className="max-w-sm mx-auto bg-white shadow-xl rounded-lg p-4">
-            <h4 className="font-semibold font-headline text-center mb-4">Legislative Agenda</h4>
-            <div className="space-y-4">
-                <div>
-                    <div className="flex items-center gap-2 mb-2">
-                        <ThumbsUp className="h-5 w-5 text-green-600" />
-                        <h5 className="font-semibold text-sm text-green-600 uppercase">SUPPORT</h5>
-                    </div>
-                    <ul className="space-y-3 text-sm border-l-2 border-gray-200 pl-4 ml-2.5">
-                        <li>
-                            <p className="font-medium text-card-foreground">HR-3 Lower Drug Costs Now Act</p>
-                            <p className="text-xs text-muted-foreground">Aligns with market access strategy</p>
-                        </li>
-                        <li>
-                            <p className="font-medium text-card-foreground">S-1895 HELP Committee Bill</p>
-                            <p className="text-xs text-muted-foreground">Favorable biosimilar provisions</p>
-                        </li>
-                    </ul>
+        <Card className="max-w-md mx-auto bg-white shadow-xl rounded-lg p-6">
+            <h4 className="font-semibold font-headline text-center mb-4">Unified Risk Standard</h4>
+            <div className="flex justify-around items-center text-center">
+                <div className="space-y-1">
+                    <p className="font-mono text-sm p-2 bg-gray-100 rounded">ASL-3</p>
+                    <p className="font-mono text-sm p-2 bg-gray-100 rounded">Critical</p>
+                    <p className="font-mono text-sm p-2 bg-gray-100 rounded">CCL-5</p>
                 </div>
+                <ArrowRight className="h-8 w-8 text-gray-400 shrink-0 mx-4" />
                 <div>
-                    <div className="flex items-center gap-2 mt-4 mb-2">
-                        <ThumbsDown className="h-5 w-5 text-red-600" />
-                        <h5 className="font-semibold text-sm text-red-600 uppercase">OPPOSE</h5>
-                    </div>
-                    <ul className="space-y-3 text-sm border-l-2 border-gray-200 pl-4 ml-2.5">
-                        <li>
-                            <p className="font-medium text-card-foreground">HR-987 Elijah Cummings Act</p>
-                            <p className="text-xs text-muted-foreground">Price negotiation risk: $340M</p>
-                        </li>
-                        <li>
-                            <p className="font-medium text-card-foreground">S-2543 340B Reform Act</p>
-                            <p className="text-xs text-muted-foreground">Threatens discount program revenue</p>
-                        </li>
-                    </ul>
+                     <p className="font-mono text-lg p-4 bg-red-100 text-red-700 rounded-lg">RISK-4</p>
                 </div>
             </div>
         </Card>
@@ -73,18 +51,43 @@ function LearnVisual() {
 }
 
 function WatchVisual() {
-    return <div className="h-80 w-full"></div>;
+    const data = [
+        { name: 'Jan', capabilities: 10, threshold: 80 },
+        { name: 'Feb', capabilities: 20, threshold: 80 },
+        { name: 'Mar', capabilities: 35, threshold: 80 },
+        { name: 'Apr', capabilities: 55, threshold: 80 },
+        { name: 'May', capabilities: 75, threshold: 80 },
+    ];
+    return (
+        <div className="h-80 w-full p-4 bg-white rounded-lg shadow-xl">
+             <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data} margin={{ top: 5, right: 20, left: -10, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
+                    <Tooltip contentStyle={{
+                        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                        backdropFilter: 'blur(2px)',
+                        borderRadius: '0.5rem',
+                        border: '1px solid hsl(var(--border))'
+                    }}/>
+                    <Line type="monotone" dataKey="capabilities" stroke="hsl(var(--primary))" strokeWidth={2} name="Capability" />
+                    <Line type="monotone" dataKey="threshold" stroke="hsl(var(--destructive))" strokeDasharray="5 5" name="Red Line" />
+                </LineChart>
+            </ResponsiveContainer>
+        </div>
+    );
 }
 
 function DeepVisual() {
     return (
         <Card className="max-w-sm mx-auto bg-white/30 backdrop-blur-sm shadow-xl rounded-lg p-6 text-center">
-            <div className="w-16 h-16 bg-gray-200/50 rounded-full mx-auto mb-4 flex items-center justify-center">
-                <FileText className="h-8 w-8 text-gray-400" />
+            <div className="w-16 h-16 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <ShieldAlert className="h-8 w-8 text-red-600" />
             </div>
-            <h4 className="font-semibold font-headline mb-1">SB-1847 Analysis</h4>
-            <p className="text-sm text-muted-foreground mb-4">Read Ready</p>
-            <Button variant="secondary" className="bg-white">Open Brief</Button>
+            <h4 className="font-semibold font-headline mb-1">Threshold Breach</h4>
+            <p className="text-sm text-muted-foreground mb-4">Evidence file generated.</p>
+            <Button variant="secondary" className="bg-white">View Report</Button>
         </Card>
     )
 }

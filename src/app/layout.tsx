@@ -3,8 +3,8 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Legislative AI',
-  description: 'Monitor legislative threats and map policy exposure with AI.',
+  title: 'Line4',
+  description: 'Real-time surveillance of the 4 critical thresholds that define catastrophic risk.',
 };
 
 export default function RootLayout({

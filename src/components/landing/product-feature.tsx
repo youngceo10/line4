@@ -10,10 +10,10 @@ export default function ProductFeature() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="max-w-lg">
             <h2 className="text-4xl md:text-5xl font-bold font-headline tracking-tight text-card-foreground leading-tight">
-              Reads every bill. Understands what it actually does.
+              Reads every eval. Understands what it actually implies.
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Other tools match keywords. We match impact. The rider amendment buried in a budget bill that kills your business is now front and center.
+              Other dashboards show you pass rates. We show you risk surface. The subtle jump in deception capabilities buried in a footnote? We flag it. The rapid improvement in agentic coding that bypasses current safeguards? It’s on your dashboard before the press release goes out.
             </p>
           </div>
           <div className="flex justify-center">
