@@ -7,26 +7,30 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ShieldAlert, ArrowDown } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, CartesianGrid, Tooltip } from "recharts";
 import { FadeIn } from "@/components/ui/fade-in";
+import { cn } from "@/lib/utils";
 
 const processData = [
     {
         value: "normalize",
         number: "01",
-        title: "Normalize the Noise",
+        title: "Normalize",
+        fullTitle: "Normalize the Noise",
         description: "We pull from official model cards and safety evaluations, ingesting disparate frameworks like Anthropic's 'RSPs' and OpenAI's 'Preparedness Framework.' Our system then standardizes everything into a single, unified risk score. No more jargon, just a clear signal.",
         visual: <LearnVisual />,
     },
     {
         value: "watch",
         number: "02",
-        title: "Watch the Curve",
+        title: "Watch",
+        fullTitle: "Watch the Curve",
         description: "Using our analysis APIs, we track the velocity of AI capabilities in real-time across the four critical risk dimensions: CBRN, cyber offense, autonomous replication, and deceptive alignment. Line⁴ doesn't just show a snapshot; it shows the trendline, signaling when a model is accelerating towards a red line.",
         visual: <WatchVisual />,
     },
     {
         value: "alert",
         number: "03",
-        title: "Alert the Network",
+        title: "Alert",
+        fullTitle: "Alert the Network",
         description: "A red line is just a line until it's crossed. When a threshold is breached, Line⁴ contextualizes the event and provides an instant evidence file, giving regulators and internal teams the concrete data they need to act.",
         visual: <DeepVisual />,
     }
@@ -107,34 +111,77 @@ function DeepVisual() {
 
 export default function Process() {
     const [activeTab, setActiveTab] = useState(processData[0].value);
-    const intervalRef = useRef<NodeJS.Timeout | null>(null);
-    const activeIndex = processData.findIndex(p => p.value === activeTab);
-
+    const [progress, setProgress] = useState(0);
+    const [hasStarted, setHasStarted] = useState(false);
+    const sectionRef = useRef<HTMLElement>(null);
+    
+    // Intersection observer to start the animation
     useEffect(() => {
-        intervalRef.current = setInterval(() => {
-            setActiveTab(currentTab => {
-                const currentIndex = processData.findIndex(p => p.value === currentTab);
-                const nextIndex = (currentIndex + 1) % processData.length;
-                return processData[nextIndex].value;
-            });
-        }, 5000); // Change tab every 5 seconds
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !hasStarted) {
+                    setHasStarted(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        const currentRef = sectionRef.current;
+        if (currentRef) {
+            observer.observe(currentRef);
+        }
 
         return () => {
-            if (intervalRef.current) {
-                clearInterval(intervalRef.current);
+            if (currentRef) {
+                observer.unobserve(currentRef);
             }
         };
-    }, []);
+    }, [hasStarted]);
+
+    // Animation effect for progress bar
+    useEffect(() => {
+        if (!hasStarted) return;
+
+        setProgress(0);
+        const duration = 8000; // 8 seconds total for one loop
+        const intervalTime = 50; // Update every 50ms
+        const totalSteps = duration / intervalTime;
+        const increment = 100 / totalSteps;
+
+        const interval = setInterval(() => {
+            setProgress(prev => {
+                const nextProgress = prev + increment;
+                if (nextProgress >= 100) {
+                    return 0; // Loop the animation
+                }
+                return nextProgress;
+            });
+        }, intervalTime);
+
+        return () => clearInterval(interval);
+    }, [hasStarted]);
+
+    // Update active tab based on progress
+    useEffect(() => {
+        const newActiveIndex = Math.min(
+            Math.floor(progress / (100 / processData.length)),
+            processData.length - 1
+        );
+        if (processData[newActiveIndex]) {
+            setActiveTab(processData[newActiveIndex].value);
+        }
+    }, [progress]);
     
     return (
-        <section className="py-20 md:py-24 bg-background">
+        <section ref={sectionRef} className="py-20 md:py-24 bg-background">
             <div className="container mx-auto px-4">
                 <FadeIn className="max-w-3xl mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-normal font-headline">Our Process</h2>
                     <div className="mt-4 mx-auto w-24 h-px bg-border"></div>
                 </FadeIn>
 
-                <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-12 sm:mt-16">
+                <Tabs value={activeTab} className="mt-12 sm:mt-16">
                      <div className="relative border-b">
                         <TabsList className="grid w-full grid-cols-3 bg-transparent p-0 h-auto rounded-none justify-items-stretch">
                             {processData.map(tab => (
@@ -142,16 +189,15 @@ export default function Process() {
                                     <h3 className="text-xs sm:text-base font-headline font-semibold transition-colors text-muted-foreground data-[state=active]:text-foreground">
                                         <span className="hidden sm:inline-block mr-2 opacity-50">{tab.number}</span>
                                         <span className="hidden sm:inline-block mr-2">&mdash;</span>
-                                        {tab.title}
+                                        <span className="hidden sm:inline-block">{tab.fullTitle}</span>
+                                        <span className="sm:hidden">{tab.title}</span>
                                     </h3>
                                 </TabsTrigger>
                             ))}
                         </TabsList>
-                         <div className="absolute bottom-[-1px] left-0 h-0.5 bg-primary transition-transform duration-500 ease-in-out" 
-                            style={{ 
-                                width: `${100 / processData.length}%`,
-                                transform: `translateX(${activeIndex * 100}%)`
-                            }}
+                         <div 
+                            className="absolute bottom-[-1px] left-0 h-0.5 bg-primary transition-[width] duration-100 ease-linear" 
+                            style={{ width: `${progress}%` }}
                         />
                     </div>
                     

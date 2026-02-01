@@ -49,7 +49,7 @@ export function FadeIn({
       ref={ref}
       className={cn(
         'transform-gpu transition-all duration-1000 ease-out',
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0',
+        isVisible ? 'translate-y-0 opacity-100 blur-0' : 'translate-y-8 opacity-0 blur-md',
         className
       )}
       style={{ transitionDelay: `${delay}ms` }}
