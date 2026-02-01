@@ -8,9 +8,9 @@ export default function Header() {
         href="/"
         className="flex items-center gap-2 text-lg font-semibold"
       >
-        <div className="font-headline font-bold text-2xl text-card-foreground flex items-baseline">
+        <div className="font-headline font-bold text-2xl text-card-foreground flex items-center">
           <span>Line</span>
-          <span className="text-primary text-3xl -ml-2">4</span>
+          <sup className="text-primary text-2xl font-bold -top-2 relative ml-0.5">4</sup>
         </div>
       </Link>
 
