@@ -13,14 +13,14 @@ const processData = [
         value: "normalize",
         number: "01",
         title: "Normalize the Noise",
-        description: "Anthropic has 'Responsible Scaling Policies.' OpenAI has a 'Preparedness Framework.' DeepMind has 'Critical Capability Levels.' We ingest and standardize these disparate safety frameworks into a single, unified risk standard. No more jargon, just a clear signal.",
+        description: "We pull from official model cards and safety evaluations, ingesting disparate frameworks like Anthropic's 'RSPs' and OpenAI's 'Preparedness Framework.' Our system then standardizes everything into a single, unified risk score. No more jargon, just a clear signal.",
         visual: <LearnVisual />,
     },
     {
         value: "watch",
         number: "02",
         title: "Watch the Curve",
-        description: "Track the velocity of AI capabilities in real-time across the four critical risk dimensions: CBRN, cyber offense, autonomous replication, and deceptive alignment. Line⁴ doesn't just show a snapshot; it shows the trendline, signaling when a model is accelerating towards a red line.",
+        description: "Using our analysis APIs, we track the velocity of AI capabilities in real-time across the four critical risk dimensions: CBRN, cyber offense, autonomous replication, and deceptive alignment. Line⁴ doesn't just show a snapshot; it shows the trendline, signaling when a model is accelerating towards a red line.",
         visual: <WatchVisual />,
     },
     {
