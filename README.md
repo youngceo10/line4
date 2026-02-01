@@ -15,4 +15,4 @@ This repository contains the source code for the Line⁴ landing page.
 
 ## Deployment
 
-This application is ready to be deployed on [Vercel](https://vercel.com/). Simply connect your GitHub repository to a new Vercel project.
+This application is ready to be deployed on [Vercel](https://line4.vercel.app/). Simply connect your GitHub repository to a new Vercel project.
