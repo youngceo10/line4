@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -95,7 +95,31 @@ function DeepVisual() {
 
 export default function Process() {
     const [activeTab, setActiveTab] = useState(processData[0].value);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
     const activeIndex = processData.findIndex(p => p.value === activeTab);
+
+    const handleTabChange = (value: string) => {
+        if (intervalRef.current) {
+            clearInterval(intervalRef.current);
+        }
+        setActiveTab(value);
+    };
+
+    useEffect(() => {
+        intervalRef.current = setInterval(() => {
+            setActiveTab(currentTab => {
+                const currentIndex = processData.findIndex(p => p.value === currentTab);
+                const nextIndex = (currentIndex + 1) % processData.length;
+                return processData[nextIndex].value;
+            });
+        }, 5000); // Change tab every 5 seconds
+
+        return () => {
+            if (intervalRef.current) {
+                clearInterval(intervalRef.current);
+            }
+        };
+    }, []);
     
     return (
         <section className="py-20 md:py-24 bg-card">
@@ -105,8 +129,8 @@ export default function Process() {
                     <div className="mt-4 mx-auto w-24 h-px bg-border"></div>
                 </div>
 
-                <Tabs defaultValue={processData[0].value} onValueChange={setActiveTab} className="mt-16">
-                    <div className="relative border-b">
+                <Tabs value={activeTab} onValueChange={handleTabChange} className="mt-16">
+                     <div className="relative border-b">
                         <TabsList className="grid w-full grid-cols-3 bg-transparent p-0 h-auto rounded-none justify-items-stretch">
                             {processData.map(tab => (
                                 <TabsTrigger key={tab.value} value={tab.value} className="text-left p-4 data-[state=active]:shadow-none data-[state=active]:bg-transparent rounded-none focus:ring-0 focus:shadow-none">
@@ -117,9 +141,9 @@ export default function Process() {
                                 </TabsTrigger>
                             ))}
                         </TabsList>
-                         <div className="absolute bottom-[-1px] left-0 h-0.5 bg-primary transition-transform duration-300 ease-in-out" 
+                         <div className="absolute bottom-[-1px] left-0 h-0.5 bg-primary transition-transform duration-500 ease-in-out" 
                             style={{ 
-                                width: `33.333%`,
+                                width: `${100 / processData.length}%`,
                                 transform: `translateX(${activeIndex * 100}%)`
                             }}
                         />
