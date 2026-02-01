@@ -1,23 +1,40 @@
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Scale } from 'lucide-react';
 import Link from 'next/link';
+
+const Fed10Logo = () => (
+    <div className='transform -rotate-[15deg]'>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            >
+            <circle cx="12" cy="12" r="9"  />
+            <line x1="4.22" y1="19.78" x2="19.78" y2="4.22" />
+        </svg>
+    </div>
+);
 
 export default function Header() {
   return (
-    <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-card px-4 md:px-6 z-50">
-      <div className="flex items-center gap-2">
-        <Link
-          href="/"
-          className="flex items-center gap-2 text-lg font-semibold"
-        >
-          <Scale className="h-6 w-6 text-primary" />
-          <span className="font-headline font-bold text-xl text-card-foreground">Legislative AI</span>
-        </Link>
-      </div>
+    <header className="sticky top-0 flex h-20 items-center justify-between bg-background px-4 md:px-8 z-50 border-b">
+      <Link
+        href="/"
+        className="flex items-center gap-2 text-lg font-semibold"
+      >
+        <Fed10Logo />
+        <span className="font-headline font-bold text-2xl text-card-foreground">Fed10</span>
+      </Link>
 
-      <div className="flex w-full items-center justify-end gap-4 md:ml-auto md:gap-2 lg:gap-4">
-        <Button className="bg-accent hover:bg-accent/90 text-accent-foreground">Book a Demo</Button>
+      <div className="flex items-center gap-4">
+        <Button asChild className="bg-foreground text-background hover:bg-foreground/90 rounded-full px-6">
+          <Link href="#">Book a Demo</Link>
+        </Button>
       </div>
     </header>
   );
